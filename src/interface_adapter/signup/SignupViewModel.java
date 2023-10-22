@@ -4,6 +4,7 @@ import interface_adapter.ViewModel;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
 
 public class SignupViewModel extends ViewModel {
 
@@ -15,6 +16,7 @@ public class SignupViewModel extends ViewModel {
 
     public static final String SIGNUP_BUTTON_LABEL = "Sign up";
     public static final String CANCEL_BUTTON_LABEL = "Cancel";
+
 
     private SignupState state = new SignupState();
 
@@ -40,5 +42,14 @@ public class SignupViewModel extends ViewModel {
 
     public SignupState getState() {
         return state;
+    }
+
+    private static ArrayList<String> names;
+    public static void clearUsers(ArrayList<String> ns) {
+        names = ns;
+    }
+
+    public static ArrayList<String> getNames() {
+        return names;
     }
 }
